@@ -6,10 +6,12 @@
       <h2>一个简洁的 UI 框架</h2>
       <div class="actions">
         <div class="action">
-          <a class="VPButton medium brand" href="">快速开始</a>
+          <router-link class="VPButton medium brand" to="/doc">快速开始</router-link>
         </div>
         <div class="action">
-          <a class="VPButton medium alt" href="">查看源码</a>
+          <a class="VPButton medium alt" href="https://github.com/traveler319/Stream-UI">
+            查看源码
+          </a>
         </div>
       </div>
     </div>
