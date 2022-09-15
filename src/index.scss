@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  font-size: 16px;
+  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial,
+    "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC",
+    "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
+    SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  // 这样写 font-family 详见 https://github.com/zenozeng/fonts.css/
+}
+
 ul,
 ol {
   list-style: none;
@@ -13,6 +22,7 @@ a {
   text-decoration: none;
   color: inherit;
   &:hover {
+    cursor: pointer;
     border-bottom: 1px solid;
   }
 }
