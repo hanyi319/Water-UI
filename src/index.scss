@@ -13,6 +13,15 @@ body {
   // 这样写 font-family 详见 https://github.com/zenozeng/fonts.css/
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
 ul,
 ol {
   list-style: none;
