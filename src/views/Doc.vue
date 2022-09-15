@@ -30,7 +30,6 @@ export default {
   components: { Topnav },
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
-    console.log("Doc aside 获取到的 asideVisible 为：" + asideVisible.value);
     return { asideVisible };
   },
 };
@@ -41,10 +40,6 @@ aside {
   background: #f9f9f9;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
   > h2 {
     margin-bottom: 4px;
   }
@@ -52,6 +47,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
   }
 }
 </style>
