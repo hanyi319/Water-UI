@@ -2,8 +2,8 @@
   <div>
     <Topnav />
     <div class="banner">
-      <h1>清流 UI</h1>
-      <h2>一个简洁的 UI 框架</h2>
+      <h1>Stream UI</h1>
+      <h2>简洁有效的组件库</h2>
       <div class="actions">
         <div class="action">
           <router-link class="VPButton medium brand" to="/doc">快速开始</router-link>
