@@ -1,16 +1,33 @@
 <template>
-  <button class="stream-button" :class="`stream-theme-${theme}`">
+  <button class="stream-button" :class="classes">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
+import { computed } from "vue";
+
 export default {
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
+  },
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return [`stream-theme-${theme}`, `stream-size-${size}`];
+      // return {
+      //   // [`stream-theme-${theme}`]: theme,
+      //   // [`stream-size-${size}`]: size,
+      // };
+    });
+    return { classes };
   },
 };
 </script>
@@ -74,6 +91,18 @@ $radius: 4px;
     &:focus {
       background: darken(white, 5%);
     }
+  }
+
+  &.stream-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+
+  &.stream-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>
