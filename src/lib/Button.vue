@@ -1,5 +1,5 @@
 <template>
-  <button class="stream-button" :class="`theme-${theme}`">
+  <button class="stream-button" :class="`stream-theme-${theme}`">
     <slot />
   </button>
 </template>

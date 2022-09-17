@@ -1,5 +1,7 @@
 <template>
-  <button @click="toggle" :class="{ checked: value }"><span></span></button>
+  <button @click="toggle" class="stream-switch" :class="{ 'stream-checked': value }">
+    <span></span>
+  </button>
   <div>{{ value }}</div>
 </template>
 value
@@ -22,7 +24,7 @@ export default {
 $h: 22px;
 $h2: $h - 4px;
 
-button {
+.stream-switch {
   height: $h;
   width: calc($h * 2);
   border: none;
@@ -41,7 +43,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.stream-checked {
     background: #1890ff;
 
     > span {
@@ -59,7 +61,7 @@ button {
     }
   }
 
-  &.checked:active {
+  &.stream-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
