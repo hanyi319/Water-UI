@@ -1,5 +1,5 @@
 <template>
-  <button class="stream-button" :class="classes">
+  <button class="stream-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -21,6 +21,10 @@ export default {
       type: String,
       default: "normal",
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const { theme, size, level } = props;
@@ -38,6 +42,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $red: red;
+$grey: grey;
 $radius: 4px;
 
 .stream-button {
@@ -156,6 +161,24 @@ $radius: 4px;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+
+  &.stream-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+
+  &.stream-theme-link,
+  &.stream-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
