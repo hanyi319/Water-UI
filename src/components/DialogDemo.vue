@@ -1,100 +1,12 @@
 <template>
-  <div>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-    <p>Dialog 的文档</p>
-  </div>
+  <Dialog />
 </template>
+
+<script lang="ts">
+import Dialog from "../lib/Dialog.vue";
+export default {
+  components: {
+    Dialog,
+  },
+};
+</script>
