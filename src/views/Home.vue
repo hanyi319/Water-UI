@@ -2,8 +2,9 @@
   <div>
     <Topnav />
     <div class="banner">
-      <h1>Stream UI</h1>
+      <h1>Toy UI</h1>
       <h2>简洁有效的组件库</h2>
+      <h3>基于 Vue 3，适合新手练习</h3>
       <div class="actions">
         <div class="action">
           <router-link class="VPButton medium brand" to="/doc">快速开始</router-link>

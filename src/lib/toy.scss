@@ -1,8 +1,8 @@
 // 因为会影响到其他选择器，所以需要做些特殊处理，只影响和 stream 相关的 CSS
 // 任何含有以 stream- 开头的 class 属性的元素
 // 或者 class 里面的第二个、第三个值含有 (空格)stream- 开头的元素，比如 class="xxx stream-button"
-[class^="stream"],
-[class*=" stream-"] {
+[class^="toy"],
+[class*=" toy-"] {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

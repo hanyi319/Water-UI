@@ -1,6 +1,6 @@
 <template>
-  <button class="stream-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="stream-loadingIndicator"></span>
+  <button class="toy-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="toy-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -34,7 +34,7 @@ export default {
   setup(props) {
     const { theme, size, level } = props;
     const classes = computed(() => {
-      return [`stream-theme-${theme}`, `stream-size-${size}`, `stream-level-${level}`];
+      return [`toy-theme-${theme}`, `toy-size-${size}`, `toy-level-${level}`];
     });
     return { classes };
   },
@@ -50,7 +50,7 @@ $red: red;
 $grey: grey;
 $radius: 4px;
 
-.stream-button {
+.toy-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -85,7 +85,7 @@ $radius: 4px;
     border: 0;
   }
 
-  &.stream-theme-link {
+  &.toy-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -95,7 +95,7 @@ $radius: 4px;
     }
   }
 
-  &.stream-theme-text {
+  &.toy-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -105,20 +105,20 @@ $radius: 4px;
     }
   }
 
-  &.stream-size-big {
+  &.toy-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
 
-  &.stream-size-small {
+  &.toy-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
 
-  &.stream-theme-button {
-    &.stream-level-main {
+  &.toy-theme-button {
+    &.toy-level-main {
       background: $blue;
       border-color: $blue;
       color: white;
@@ -129,7 +129,7 @@ $radius: 4px;
       }
     }
 
-    &.stream-level-danger {
+    &.toy-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -141,8 +141,8 @@ $radius: 4px;
     }
   }
 
-  &.stream-theme-link {
-    &.stream-level-danger {
+  &.toy-theme-link {
+    &.toy-level-danger {
       color: $red;
       &:hover,
       &focus {
@@ -151,8 +151,8 @@ $radius: 4px;
     }
   }
 
-  &.stream-theme-text {
-    &.stream-level-main {
+  &.toy-theme-text {
+    &.toy-level-main {
       color: $blue;
       &:hover,
       &focus {
@@ -160,7 +160,7 @@ $radius: 4px;
       }
     }
 
-    &.stream-level-danger {
+    &.toy-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -169,7 +169,7 @@ $radius: 4px;
     }
   }
 
-  &.stream-theme-button {
+  &.toy-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -179,15 +179,15 @@ $radius: 4px;
     }
   }
 
-  &.stream-theme-link,
-  &.stream-theme-text {
+  &.toy-theme-link,
+  &.toy-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  > .stream-loadingIndicator {
+  > .toy-loadingIndicator {
     width: 10px;
     height: 10px;
     display: inline-block;
@@ -196,11 +196,11 @@ $radius: 4px;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: stream-spin 1s infinite linear;
+    animation: toy-spin 1s infinite linear;
   }
 }
 
-@keyframes stream-spin {
+@keyframes toy-spin {
   0% {
     transform: rotate(0deg);
   }

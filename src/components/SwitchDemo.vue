@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>示例</h1>
     <Switch v-model:value="bool" />
   </div>
 </template>
