@@ -1,7 +1,18 @@
 <template>
-  <div>
-    <div v-for="t in titles" :key="t">{{ t }}</div>
-    <component v-for="(c, index) in defaults" :key="index" :is="c" />
+  <div class="toy-tabs">
+    <div class="toy-tabs-nav">
+      <div class="toy-tabs-nav-item" v-for="(t, index) in titles" :key="index">
+        {{ t }}
+      </div>
+    </div>
+    <div class="toy-tabs-content">
+      <component
+        class="toy-tabs-content-item"
+        v-for="(c, index) in defaults"
+        :key="index"
+        :is="c"
+      />
+    </div>
   </div>
 </template>
 
@@ -23,3 +34,35 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+$blue: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+
+.toy-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+
+  &-content {
+    padding: 8px 0;
+  }
+}
+</style>
