@@ -58,7 +58,8 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit("cancel");
+      // 新语法：props.cancel?.()
+      props.cancel && props.cancel();
       close();
     };
     return { close, onClickOverlay, ok, cancel };
