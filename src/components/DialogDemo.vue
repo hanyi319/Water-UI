@@ -1,15 +1,18 @@
 <template>
   <div>示例</div>
-  <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
-    <template v-slot:title>
-      <strong>加粗的标题</strong>
-    </template>
-    <template v-slot:content>
-      <strong>Hello</strong>
-      <div>World</div>
-    </template>
-  </Dialog>
+  <div style="position: relative; z-index: 1">
+    <Button @click="toggle">toggle</Button>
+    <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
+      <template v-slot:title>
+        <strong>加粗的标题</strong>
+      </template>
+      <template v-slot:content>
+        <strong>Hello</strong>
+        <div>World</div>
+      </template>
+    </Dialog>
+  </div>
+  <div style="position: relative; z-index: 2; width: 300px; height: 300px; background: red"></div>
 </template>
 
 <script lang="ts">
