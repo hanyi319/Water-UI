@@ -12,8 +12,7 @@
       </div>
     </div>
     <div class="toy-tabs-content">
-      {{ current }}
-      <component class="toy-tabs-content-item" :is="current" />
+      <component class="toy-tabs-content-item" :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
@@ -41,10 +40,7 @@ export default {
 
     // 找到当前选中的内容，并且 current 是根据 selected 得到的计算属性
     const current = computed(() => {
-      console.log("重新 return 过");
-      return defaults.filter((tag) => {
-        return tag.props.title === props.selected;
-      })[0];
+      return defaults.find((tag) => tag.props.title === props.selected);
       // 因为 filter 返回值就算只有一个，也会作为数组返回，所以还要取第0个
     });
 
