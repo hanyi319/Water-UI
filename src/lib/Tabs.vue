@@ -12,7 +12,13 @@
       </div>
     </div>
     <div class="toy-tabs-content">
-      <component class="toy-tabs-content-item" :is="current" :key="current.props.title" />
+      <component
+        class="toy-tabs-content-item"
+        :class="{ selected: c.props.title === selected }"
+        v-for="(c, index) in defaults"
+        :key="index"
+        :is="c"
+      />
     </div>
   </div>
 </template>
@@ -40,7 +46,9 @@ export default {
 
     // 找到当前选中的内容，并且 current 是根据 selected 得到的计算属性
     const current = computed(() => {
-      return defaults.find((tag) => tag.props.title === props.selected);
+      return defaults.filter((tag) => {
+        return tag.props.title === props.selected;
+      })[0];
       // 因为 filter 返回值就算只有一个，也会作为数组返回，所以还要取第0个
     });
 
@@ -53,7 +61,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
@@ -81,6 +89,14 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
+
+    &-item {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
