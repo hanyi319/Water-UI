@@ -1,25 +1,33 @@
 <template>
   <div class="toy-tabs">
     <div class="toy-tabs-nav">
-      <div class="toy-tabs-nav-item" v-for="(t, index) in titles" :key="index">
+      <div
+        class="toy-tabs-nav-item"
+        :class="{ selected: t === selected }"
+        v-for="(t, index) in titles"
+        :key="index"
+        @click="select(t)"
+      >
         {{ t }}
       </div>
     </div>
     <div class="toy-tabs-content">
-      <component
-        class="toy-tabs-content-item"
-        v-for="(c, index) in defaults"
-        :key="index"
-        :is="c"
-      />
+      {{ current }}
+      <component class="toy-tabs-content-item" :is="current" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { computed } from "vue";
 import Tab from "./Tab.vue";
 
 export default {
+  props: {
+    selected: {
+      type: String,
+    },
+  },
   setup(props, context) {
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
@@ -30,7 +38,21 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return { defaults, titles };
+
+    // 找到当前选中的内容，并且 current 是根据 selected 得到的计算属性
+    const current = computed(() => {
+      console.log("重新 return 过");
+      return defaults.filter((tag) => {
+        return tag.props.title === props.selected;
+      })[0];
+      // 因为 filter 返回值就算只有一个，也会作为数组返回，所以还要取第0个
+    });
+
+    // 给导航标签添加点击事件，监听 selected 属性是否发生变化，并通知外部
+    const select = (title: string) => {
+      context.emit("update:selected", title);
+    };
+    return { defaults, titles, current, select };
   },
 };
 </script>
