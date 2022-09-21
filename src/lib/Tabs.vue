@@ -18,19 +18,13 @@
       <div class="toy-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="toy-tabs-content">
-      <component
-        class="toy-tabs-content-item"
-        :class="{ selected: c.props.title === selected }"
-        v-for="(c, index) in defaults"
-        :key="index"
-        :is="c"
-      />
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref, watchEffect } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import Tab from "./Tab.vue";
 
 export default {
@@ -72,16 +66,14 @@ export default {
 
     // 找到当前选中的内容，并且 current 是根据 selected 得到的计算属性
     const current = computed(() => {
-      return defaults.filter((tag) => {
-        return tag.props.title === props.selected;
-      })[0];
-      // 因为 filter 返回值就算只有一个，也会作为数组返回，所以还要取第0个
+      return defaults.find((tag) => tag.props.title === props.selected);
     });
 
     // 给导航标签添加点击事件，监听 selected 属性是否发生变化，并通知外部
     const select = (title: string) => {
       context.emit("update:selected", title);
     };
+
     return { selectedItem, indicator, container, defaults, titles, current, select };
   },
 };
@@ -126,14 +118,6 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
-
-    &-item {
-      display: none;
-
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
