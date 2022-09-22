@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
       <h1>Toy UI</h1>
@@ -27,13 +27,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topnavAndBanner {
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(227, 255, 253, 1) 0%,
+    rgba(183, 233, 230, 1) 100%,
+    rgba(183, 233, 230, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #fff;
+
   > .actions {
     display: flex;
     flex-wrap: wrap;
