@@ -1,20 +1,27 @@
 <template>
-  <div class="topnavAndBanner">
-    <Topnav />
-    <div class="banner">
-      <h1>Toy UI</h1>
-      <h2>简洁有效的组件库</h2>
-      <h3>基于 Vue 3，适合新手练习</h3>
-      <div class="actions">
-        <div class="action">
-          <router-link class="VPButton medium brand" to="/doc">快速开始</router-link>
-        </div>
-        <div class="action">
-          <a class="VPButton medium alt" href="https://github.com/traveler319/Stream-UI">
-            查看源码
-          </a>
-        </div>
+  <div>
+    <div class="topnavAndBanner">
+      <Topnav />
+      <div class="banner">
+        <h1>Toy UI</h1>
+        <h2>简洁有效的组件库</h2>
+        <h3>基于 Vue 3，适合新手练习</h3>
+        <p class="actions">
+          <router-link to="/doc">快速开始</router-link>
+          <a href="https://github.com/hanyi319/Toy-UI">查看源码</a>
+        </p>
       </div>
+    </div>
+    <div class="features">
+      <svg class="icon">
+        <use xlink:href="#icon-vue"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-ts"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-light"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -27,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$green: #02bcb0;
+$border-radius: 4px;
+$color: #007974;
+
 .topnavAndBanner {
   background: linear-gradient(
     145deg,
@@ -43,40 +54,26 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: $color;
 
   > .actions {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -6px;
-    padding-top: 24px;
-    > .action {
-      flex-shrink: 0;
-      padding: 6px;
-      > .VPButton {
-        display: inline-block;
-        border: 1px solid transparent;
-        text-align: center;
-        font-weight: 500;
-        white-space: nowrap;
-        transition: color 0.25s, border-color 0.25s, background-color 0.25s;
-      }
-      > .medium {
-        border-radius: 20px;
-        padding: 0 20px;
-        line-height: 38px;
-        font-size: 14px;
-      }
-      > .brand {
-        border-color: #747bff;
-        color: rgba(255, 255, 255, 0.87);
-        background-color: #646cff;
-      }
-      > .alt {
-        border-color: #d1d1d1;
-        color: #213547;
-        background-color: #f2f2f2;
-      }
+    padding: 8px 0;
+
+    a {
+      margin: 0 8px;
+      background: $green;
+      color: white;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: $border-radius;
     }
+  }
+}
+
+.features {
+  > svg {
+    width: 64px;
+    height: 64px;
   }
 }
 </style>
