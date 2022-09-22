@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="markdown-body">
     <h1>介绍</h1>
     <p>Toy UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。</p>
     <p>该组件库旨在帮助新手学习，尽量不采用第三方库，包括这个官网也是自己编写的。</p>
