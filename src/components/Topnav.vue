@@ -10,9 +10,9 @@
         <router-link to="/doc">文档</router-link>
       </li>
     </ul>
-    <span class="toggleAside" @click="toggleAside">
-      <img src="../assets/icons/menu.svg" alt="menu" />
-    </span>
+    <svg v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
   </div>
 </template>
 
@@ -20,6 +20,12 @@
 import { inject, Ref } from "vue";
 
 export default {
+  props: {
+    toggleAsideButtonVisible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
     const toggleAside = () => {
@@ -69,10 +75,6 @@ $color: #007974;
     top: 50%;
     transform: translateY(-50%);
     display: none;
-    > img {
-      width: 24px;
-      height: 24px;
-    }
   }
 
   @media (max-width: 500px) {
