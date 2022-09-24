@@ -45,7 +45,8 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #40a9ff;
+// $green: #40a9ff;
+$green: #00b96b;
 $red: red;
 $grey: grey;
 $radius: 4px;
@@ -72,8 +73,8 @@ $radius: 4px;
 
   &:hover,
   &:focus {
-    color: $blue;
-    border-color: $blue;
+    color: $green;
+    border-color: $green;
   }
 
   &:focus {
@@ -88,10 +89,10 @@ $radius: 4px;
   &.toy-theme-link {
     border-color: transparent;
     box-shadow: none;
-    color: $blue;
+    color: $green;
     &:hover,
     &focus {
-      color: lighten($blue, 10%);
+      color: lighten($green, 10%);
     }
   }
 
@@ -119,13 +120,13 @@ $radius: 4px;
 
   &.toy-theme-button {
     &.toy-level-main {
-      background: $blue;
-      border-color: $blue;
+      background: $green;
+      border-color: $green;
       color: white;
       &:hover,
       &:focus {
-        background: darken($blue, 10%);
-        border-color: darken($blue, 10%);
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
       }
     }
 
@@ -153,10 +154,10 @@ $radius: 4px;
 
   &.toy-theme-text {
     &.toy-level-main {
-      color: $blue;
+      color: $green;
       &:hover,
       &focus {
-        color: darken($blue, 10%);
+        color: darken($green, 10%);
       }
     }
 
@@ -193,7 +194,7 @@ $radius: 4px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
-    border-color: $blue $blue $blue transparent;
+    border-color: $green $green $green transparent;
     border-style: solid;
     border-width: 2px;
     animation: toy-spin 1s infinite linear;

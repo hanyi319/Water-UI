@@ -1,5 +1,5 @@
 <demo>
-  常规使用
+  默认
 </demo>
 
 <template>
@@ -7,11 +7,10 @@
     <Button @click="toggle">toggle</Button>
     <Dialog v-model:visible="x" :ok="f1" :cancel="f2">
       <template v-slot:title>
-        <strong>加粗的标题</strong>
+        <p>标题</p>
       </template>
       <template v-slot:content>
-        <strong>Hello</strong>
-        <div>World</div>
+        <p>内容：Hello, world!</p>
       </template>
     </Dialog>
   </div>

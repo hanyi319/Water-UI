@@ -42,7 +42,7 @@ $h2: $h - 4px;
   }
 
   &.toy-checked {
-    background: #1890ff;
+    background: #00b96b;
 
     > span {
       left: calc(100% - #{$h2} - 2px);

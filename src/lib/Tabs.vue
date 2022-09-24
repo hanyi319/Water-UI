@@ -80,7 +80,8 @@ export default {
 </script>
 
 <style lang="scss">
-$blue: #40a9ff;
+// $green: #40a9ff;
+$green: #00b96b;
 $color: #333;
 $border-color: #d9d9d9;
 
@@ -101,14 +102,14 @@ $border-color: #d9d9d9;
       }
 
       &.selected {
-        color: $blue;
+        color: $green;
       }
     }
 
     &-indicator {
       position: absolute;
       height: 3px;
-      background: $blue;
+      background: $green;
       left: 0;
       bottom: -1px;
       width: 100px;

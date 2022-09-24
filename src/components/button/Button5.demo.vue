@@ -1,5 +1,5 @@
 <demo>
-  loading 示例
+  loading 属性
 </demo>
 
 <template>

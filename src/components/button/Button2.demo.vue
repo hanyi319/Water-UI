@@ -1,5 +1,5 @@
 <demo>
-  size 示例
+  size 属性
 </demo>
 
 <template>

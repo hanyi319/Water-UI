@@ -1,5 +1,5 @@
 <demo>
-  theme 示例
+  theme 属性
 </demo>
 
 <template>

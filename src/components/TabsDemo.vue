@@ -1,6 +1,12 @@
 <template>
-  <h1>Tabs 标签页组件</h1>
+  <h1>Tabs 标签页</h1>
   <Demo :component="Tabs1Demo" />
+  <div class="link">
+    <span>
+      &lt;
+      <router-link to="/doc/dialog">Dialog 对话框</router-link>
+    </span>
+  </div>
 </template>
 
 <script lang="ts">
@@ -14,3 +20,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.link {
+  display: flex;
+  justify-content: space-between;
+  color: #42b883;
+}
+</style>

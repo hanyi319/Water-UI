@@ -1,5 +1,5 @@
 <demo>
-  level 示例
+  level 属性
 </demo>
 
 <template>

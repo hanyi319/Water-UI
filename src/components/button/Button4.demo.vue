@@ -1,5 +1,5 @@
 <demo>
-  disabled 示例
+  disabled 属性
 </demo>
 
 <template>

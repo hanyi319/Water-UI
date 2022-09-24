@@ -1,5 +1,5 @@
 <demo>
-  一键打开 Dialog
+  一键打开
 </demo>
 
 <template>
@@ -18,7 +18,7 @@ export default {
     const showDialog = () => {
       openDialog({
         title: "标题",
-        content: "你好",
+        content: "内容：Hello, world!",
         ok() {
           console.log("ok");
         },

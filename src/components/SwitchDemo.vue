@@ -1,8 +1,14 @@
 <template>
   <div>
-    <h1>Switch 组件示例</h1>
+    <h1>Switch 开关</h1>
     <Demo :component="Switch1Demo" />
     <Demo :component="Switch2Demo" />
+    <div class="link">
+      <span>
+        <router-link to="/doc/button">Button 按钮</router-link>
+        &gt;
+      </span>
+    </div>
   </div>
 </template>
 
@@ -18,3 +24,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.link {
+  display: flex;
+  justify-content: space-between;
+  color: #42b883;
+}
+</style>
