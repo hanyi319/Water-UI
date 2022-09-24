@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import Switch1Demo from "./Switch1.demo.vue";
-import Switch2Demo from "./Switch2.demo.vue";
+import Switch1Demo from "./switch/Switch1.demo.vue";
+import Switch2Demo from "./switch/Switch2.demo.vue";
 import Demo from "./Demo.vue";
 
 export default {
