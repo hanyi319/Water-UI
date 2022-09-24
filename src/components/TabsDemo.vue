@@ -1,22 +1,16 @@
 <template>
-  <div>Tabs 示例</div>
-  <h1>示例 1</h1>
-  <Tabs v-model:selected="x">
-    <Tab title="导航1">内容 1</Tab>
-    <Tab title="导航2222222">内容 2</Tab>
-  </Tabs>
+  <h1>Tabs 标签页组件</h1>
+  <Demo :component="Tabs1Demo" />
 </template>
 
 <script lang="ts">
-import Tabs from "../lib/Tabs.vue";
-import Tab from "../lib/Tab.vue";
-import { ref } from "vue";
+import Demo from "./Demo.vue";
+import Tabs1Demo from "./tabs/Tabs1.demo.vue";
 
 export default {
-  components: { Tabs, Tab },
+  components: { Demo },
   setup() {
-    const x = ref("导航1");
-    return { x };
+    return { Tabs1Demo };
   },
 };
 </script>
