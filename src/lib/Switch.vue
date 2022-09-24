@@ -2,11 +2,9 @@
   <button @click="toggle" class="toy-switch" :class="{ 'toy-checked': value }">
     <span></span>
   </button>
-  <div>{{ value }}</div>
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
 export default {
   props: {
     value: Boolean,
