@@ -10,7 +10,7 @@
         <router-link to="/doc">文档</router-link>
       </li>
     </ul>
-    <svg v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside">
+    <svg v-if="toggleMenuButtonVisible" class="toggleMenu" @click="toggleMenu">
       <use xlink:href="#icon-menu"></use>
     </svg>
   </div>
@@ -21,17 +21,17 @@ import { inject, Ref } from "vue";
 
 export default {
   props: {
-    toggleAsideButtonVisible: {
+    toggleMenuButtonVisible: {
       type: Boolean,
       default: false,
     },
   },
   setup() {
-    const asideVisible = inject<Ref<boolean>>("asideVisible");
-    const toggleAside = () => {
-      asideVisible.value = !asideVisible.value;
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
+    const toggleMenu = () => {
+      menuVisible.value = !menuVisible.value;
     };
-    return { toggleAside };
+    return { toggleMenu };
   },
 };
 </script>
@@ -67,7 +67,7 @@ $color: #007974;
       margin: 0 1em;
     }
   }
-  > .toggleAside {
+  > .toggleMenu {
     width: 24px;
     height: 24px;
     position: absolute;
@@ -84,7 +84,7 @@ $color: #007974;
     > .logo {
       margin: 0 auto;
     }
-    > .toggleAside {
+    > .toggleMenu {
       display: inline-block;
     }
   }

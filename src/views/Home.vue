@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="topnavAndBanner">
-      <Topnav />
+    <div class="TopNavAndBanner">
+      <TopNav />
       <div class="banner">
         <h1>Toy UI</h1>
         <h2>简洁有效的组件库</h2>
@@ -41,9 +41,9 @@
 </template>
 
 <script lang="ts">
-import Topnav from "../components/Topnav.vue";
+import TopNav from "../components/TopNav.vue";
 export default {
-  components: { Topnav },
+  components: { TopNav },
 };
 </script>
 
@@ -52,7 +52,7 @@ $green: #02bcb0;
 $border-radius: 4px;
 $color: #007974;
 
-.topnavAndBanner {
+.TopNavAndBanner {
   background: linear-gradient(
     145deg,
     rgba(0, 0, 0, 1) 0%,
