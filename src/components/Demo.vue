@@ -17,8 +17,8 @@
 import { computed, ref } from "vue";
 import Button from "../lib/Button.vue";
 import "prismjs";
-import "prismjs/themes/prism.css";
-// import "prismjs/themes/prism-okaidia.css";
+// import "prismjs/themes/prism.css";
+import "prismjs/themes/prism-okaidia.css";
 
 const Prism = (window as any).Prism;
 
