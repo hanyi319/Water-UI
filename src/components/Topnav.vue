@@ -65,7 +65,7 @@ $border-primary: #e7e9e8;
   left: 0;
   width: 100%;
   height: 60px;
-  z-index: 10;
+  z-index: 20;
   background: $bg-primary;
   backdrop-filter: saturate(50%) blur(8px);
   border-bottom: 1px solid $border-primary;

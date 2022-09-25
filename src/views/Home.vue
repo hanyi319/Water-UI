@@ -26,7 +26,52 @@
         </div>
       </div>
     </div>
-    <div class="features"></div>
+    <div class="features">
+      <div class="items">
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">💡</div>
+            <h2 class="title">做时代的弄潮儿</h2>
+            <p class="details">基于 Vue 3，走向时代之巅</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">⚡️</div>
+            <h2 class="title">砸瓦鲁多</h2>
+            <p class="details">快……速上手</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">🛠️</div>
+            <h2 class="title">向着星辰和深渊</h2>
+            <p class="details">保姆级使用指南</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">📦</div>
+            <h2 class="title">哆啦A梦的口袋</h2>
+            <p class="details">海量的实用组件</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">🔩</div>
+            <h2 class="title">交给我吧</h2>
+            <p class="details">基于 TypeScript，保证安全</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">🔑</div>
+            <h2 class="title">你渴望力量吗</h2>
+            <p class="details">项目藏有变强的密码</p>
+          </article>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -167,42 +212,105 @@ $--vp-button-alt-text: #213547;
       }
     }
   }
+
+  > .features {
+    position: relative;
+    padding: 0 24px;
+    margin: 0 auto;
+    max-width: 1152px;
+
+    > .items {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -8px;
+
+      > .item {
+        padding: 8px;
+        width: 100%;
+
+        > .VPFeature {
+          border: 1px solid #f9f9f9;
+          border-radius: 12px;
+          padding: 24px;
+          height: 100%;
+          background-color: #f9f9f9;
+
+          > .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            background-color: #e5e5e5;
+            width: 48px;
+            height: 48px;
+            font-size: 24px;
+          }
+
+          > .title {
+            line-height: 24px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          > .details {
+            padding-top: 8px;
+            line-height: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(60, 60, 60, 0.7);
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 640px) {
-  .content {
-    padding: calc($nav-height + 80px) 48px 64px;
-    max-width: 640px;
+  .home {
+    .content {
+      padding: calc($nav-height + 80px) 48px 64px;
+      max-width: 640px;
 
-    > .main {
-      > .name,
-      .text {
-        max-width: 576px;
-        line-height: 56px;
-        font-size: 48px;
+      > .main {
+        > .name,
+        .text {
+          max-width: 576px;
+          line-height: 56px;
+          font-size: 48px;
+        }
+
+        > .tagline {
+          padding-top: 12px;
+          max-width: 576px;
+          line-height: 32px;
+          font-size: 20px;
+        }
+
+        > .actions {
+          padding-top: 32px;
+        }
       }
 
-      > .tagline {
-        padding-top: 12px;
-        max-width: 576px;
-        line-height: 32px;
-        font-size: 20px;
-      }
+      > .image {
+        margin: -108px -24px -48px;
 
-      > .actions {
-        padding-top: 32px;
+        > .image-container {
+          width: 392px;
+          height: 392px;
+
+          > .image-src {
+            max-width: 256px;
+          }
+        }
       }
     }
 
-    > .image {
-      margin: -108px -24px -48px;
-
-      > .image-container {
-        width: 392px;
-        height: 392px;
-
-        > .image-src {
-          max-width: 256px;
+    .features {
+      padding: 0 48px;
+      > .items {
+        > .item {
+          width: 50%;
         }
       }
     }
@@ -215,6 +323,14 @@ $--vp-button-alt-text: #213547;
 
     > .content {
       max-width: 768px;
+    }
+
+    > .features {
+      .items {
+        > .item {
+          width: calc(100% / 3);
+        }
+      }
     }
   }
 }
@@ -284,6 +400,10 @@ $--vp-button-alt-text: #213547;
           }
         }
       }
+    }
+
+    > .features {
+      padding: 0 64px;
     }
   }
 }
