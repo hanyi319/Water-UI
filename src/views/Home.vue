@@ -1,42 +1,32 @@
 <template>
-  <div>
-    <div class="TopNavAndBanner">
-      <TopNav />
-      <div class="banner">
-        <h1>Toy UI</h1>
-        <h2>简洁有效的组件库</h2>
-        <h3>基于 Vue 3，适合新手练习</h3>
-        <p class="actions">
-          <router-link to="/doc">快速开始</router-link>
-          <a href="https://github.com/hanyi319/Toy-UI">查看源码</a>
-        </p>
+  <TopNav />
+  <div class="home">
+    <div class="content">
+      <div class="main">
+        <h1 class="name">
+          <span class="clip">Toy UI</span>
+        </h1>
+        <p class="text">简洁有效的组件库</p>
+        <p class="tagline">基于 Vue 3，适合新手练习</p>
+        <div class="actions">
+          <div class="action">
+            <router-link class="VPButton brand" to="/doc">快速开始</router-link>
+          </div>
+          <div class="action">
+            <a class="VPButton alt" href="https://github.com/hanyi319/Toy-UI">查看源码</a>
+          </div>
+        </div>
+      </div>
+      <div class="image">
+        <div class="image-container">
+          <div class="image-bg"></div>
+          <svg class="VPImage image-src">
+            <use xlink:href="#icon-toy"></use>
+          </svg>
+        </div>
       </div>
     </div>
-    <div class="features">
-      <ul>
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-vue"></use>
-          </svg>
-          <h3>基于 Vue 3</h3>
-          <p>骄傲地使用了 Vue 3 Composition API</p>
-        </li>
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-ts"></use>
-          </svg>
-          <h3>基于 TypeScript</h3>
-          <p>源代码采用 TypeScript 书写（非严格检查）</p>
-        </li>
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-light"></use>
-          </svg>
-          <h3>代码易读</h3>
-          <p>每个组件的源代码都极其简洁</p>
-        </li>
-      </ul>
-    </div>
+    <div class="features"></div>
   </div>
 </template>
 
@@ -48,97 +38,265 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$green: #02bcb0;
-$border-radius: 4px;
-$color: #007974;
+$nav-height: 60px;
+$text: rgba(56 56 56 / 70%);
+$--vp-button-brand-border: #42b883;
+$--vp-button-brand-bg: #42b883;
+$--vp-button-brand-text: rgba(255, 255, 255, 0.87);
+$--vp-button-alt-border: #d1d1d1;
+$--vp-button-alt-bg: #f2f2f2;
+$--vp-button-alt-text: #213547;
 
-.TopNavAndBanner {
-  background: linear-gradient(
-    145deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%,
-    rgba(183, 233, 230, 1) 100%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  clip-path: ellipse(80% 60% at 50% 40%);
-}
-.banner {
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: $color;
+.home {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+  flex-shrink: 0;
 
-  > .actions {
-    padding: 8px 0;
+  > .content {
+    margin-top: calc($nav-height * -1);
+    padding: calc($nav-height + 48px) 24px 48px;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1152px;
 
-    a {
-      margin: 0 8px;
-      background: $green;
-      color: white;
-      display: inline-block;
-      padding: 8px 24px;
-      border-radius: $border-radius;
+    > .main {
+      position: relative;
+      z-index: 10;
+      order: 2;
+      flex-grow: 1;
+      flex-shrink: 0;
+
+      > .name {
+        color: transparent;
+
+        > .clip {
+          background: -webkit-linear-gradient(120deg, #42b883 30%, #86b91a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      > .name,
+      .text {
+        margin: 0 auto;
+        // max-width: 392px;
+        letter-spacing: -0.4px;
+        line-height: 40px;
+        font-size: 32px;
+        font-weight: 700;
+        white-space: pre-wrap;
+      }
+
+      > .tagline {
+        margin: 0 auto;
+        padding-top: 8px;
+        max-width: 329px;
+        line-height: 28px;
+        font-size: 18px;
+        font-weight: 500;
+        white-space: pre-wrap;
+        color: $text;
+      }
+
+      > .actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: -6px;
+        padding-top: 24px;
+
+        > .action {
+          flex-shrink: 0;
+          padding: 6px;
+
+          > .VPButton {
+            display: inline-block;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            padding: 0 20px;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+            transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+          }
+
+          > .brand {
+            border-color: $--vp-button-brand-border;
+            background-color: $--vp-button-brand-bg;
+            color: $--vp-button-brand-text;
+          }
+
+          > .alt {
+            border-color: $--vp-button-alt-border;
+            background-color: $--vp-button-alt-bg;
+            color: $--vp-button-alt-text;
+          }
+        }
+      }
+    }
+
+    > .image {
+      order: 1;
+      margin: -76px -24px -48px;
+
+      > .image-container {
+        position: relative;
+        margin: 0 auto;
+        width: 320px;
+        height: 320px;
+
+        > .image-src {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          max-width: 192px;
+          transform: translate(-50%, -50%);
+        }
+
+        > img {
+          display: block;
+          vertical-align: middle;
+          max-width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 }
 
-.features {
-  margin: 64px auto;
-  padding: 0 16px;
+@media (min-width: 640px) {
+  .content {
+    padding: calc($nav-height + 80px) 48px 64px;
+    max-width: 640px;
 
-  @media (min-width: 800px) {
-    width: 800px;
+    > .main {
+      > .name,
+      .text {
+        max-width: 576px;
+        line-height: 56px;
+        font-size: 48px;
+      }
 
-    > ul {
-      > li {
-        width: 50%;
+      > .tagline {
+        padding-top: 12px;
+        max-width: 576px;
+        line-height: 32px;
+        font-size: 20px;
+      }
+
+      > .actions {
+        padding-top: 32px;
+      }
+    }
+
+    > .image {
+      margin: -108px -24px -48px;
+
+      > .image-container {
+        width: 392px;
+        height: 392px;
+
+        > .image-src {
+          max-width: 256px;
+        }
       }
     }
   }
+}
 
-  @media (min-width: 1200px) {
-    width: 1200px;
+@media (min-width: 768px) {
+  .home {
+    padding-bottom: 128px;
 
-    > ul {
-      > li {
-        width: 33.3333%;
+    > .content {
+      max-width: 768px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .home {
+    padding-top: $nav-height;
+    padding-bottom: 96px;
+
+    > .content {
+      padding: calc($nav-height + 80px) 64px 64px;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+
+      > .main {
+        max-width: 592px;
+        order: 1;
+        width: calc((100% / 3) * 2);
+
+        > .name,
+        .text {
+          margin: 0;
+          line-height: 64px;
+          font-size: 56px;
+        }
+
+        > .tagline {
+          margin: 0;
+          line-height: 36px;
+          font-size: 24px;
+        }
+
+        > .actions {
+          justify-content: flex-start;
+        }
+      }
+
+      > .image {
+        flex-grow: 1;
+        order: 2;
+        margin: 0;
+        min-height: 100%;
+
+        > .image-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          transform: translate(-32px, -32px);
+
+          > .image-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            width: 192px;
+            height: 192px;
+            background-image: linear-gradient(-45deg, #86b91a60 30%, #edd53260);
+            filter: blur(72px);
+            transform: translate(-50%, -50%);
+
+            > .image-src {
+              max-width: 320px;
+            }
+          }
+        }
       }
     }
   }
+}
 
-  > ul {
-    display: flex;
-    flex-wrap: wrap;
+@media (min-width: 1024px) {
+  .content {
+    max-width: 1024px;
+  }
+}
 
-    > li {
-      margin: 16px 0;
-      display: grid;
-      justify-content: start;
-      align-content: space-between;
-      grid-template-areas:
-        "icon title"
-        "icon text";
-      grid-template-columns: 80px auto;
-      grid-template-rows: 1fr auto;
-
-      > svg {
-        grid-area: icon;
-        width: 64px;
-        height: 64px;
-      }
-
-      > h3 {
-        grid-area: title;
-        font-size: 28px;
-      }
-
-      > p {
-        grid-area: text;
-      }
-    }
+@media (min-width: 1280px) {
+  .content {
+    max-width: 1280px;
   }
 }
 </style>
