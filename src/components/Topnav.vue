@@ -18,9 +18,16 @@
           <router-link to="/doc/switch">组件</router-link>
         </div>
         <div class="nav-item">
+          |&nbsp;&nbsp;&nbsp;
+          <svg class="icon">
+            <use xlink:href="#icon-yuque"></use>
+          </svg>
           <a href="https://www.yuque.com/docs/share/784f9146-e690-4abc-bb08-22e570b23047?#">语雀</a>
         </div>
         <div class="nav-item">
+          <svg class="icon">
+            <use xlink:href="#icon-github"></use>
+          </svg>
           <a href="https://github.com/hanyi319/Toy-UI">GitHub</a>
         </div>
       </nav>
@@ -49,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bg-primary: #fff;
+$bg-primary: rgba(255, 255, 255, 0.7);
 $border-primary: #e7e9e8;
 
 .header {
@@ -60,6 +67,7 @@ $border-primary: #e7e9e8;
   height: 60px;
   z-index: 10;
   background: $bg-primary;
+  backdrop-filter: saturate(50%) blur(8px);
   border-bottom: 1px solid $border-primary;
 
   > .header-container {
@@ -127,7 +135,7 @@ $border-primary: #e7e9e8;
     }
 
     @media (max-width: 500px) {
-      > .logo .can-hide {
+      .can-hide {
         display: none;
       }
       > .nav-links .can-hide {
