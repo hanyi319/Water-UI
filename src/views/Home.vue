@@ -7,7 +7,7 @@
           <span class="clip">Toy UI</span>
         </h1>
         <p class="text">简洁有效的组件库</p>
-        <p class="tagline">基于 Vue 3，适合新手练习</p>
+        <p class="tagline">如无必要，勿增实体</p>
         <div class="actions">
           <div class="action">
             <router-link class="VPButton brand" to="/doc">快速开始</router-link>
@@ -20,7 +20,7 @@
       <div class="image">
         <div class="image-container">
           <div class="image-bg"></div>
-          <svg class="VPImage image-src">
+          <svg class="image-src">
             <use xlink:href="#icon-toy"></use>
           </svg>
         </div>
@@ -30,48 +30,49 @@
       <div class="items">
         <div class="item">
           <article class="VPFeature">
-            <div class="icon">💡</div>
-            <h2 class="title">做时代的弄潮儿</h2>
-            <p class="details">基于 Vue 3，走向时代之巅</p>
-          </article>
-        </div>
-        <div class="item">
-          <article class="VPFeature">
             <div class="icon">⚡️</div>
-            <h2 class="title">砸瓦鲁多</h2>
-            <p class="details">快……速上手</p>
-          </article>
-        </div>
-        <div class="item">
-          <article class="VPFeature">
-            <div class="icon">🛠️</div>
-            <h2 class="title">向着星辰和深渊</h2>
-            <p class="details">保姆级使用指南</p>
-          </article>
-        </div>
-        <div class="item">
-          <article class="VPFeature">
-            <div class="icon">📦</div>
-            <h2 class="title">哆啦A梦的口袋</h2>
-            <p class="details">海量的实用组件</p>
+            <h2 class="title">技术新颖</h2>
+            <p class="details">Vue 3 带我走向时代之巅</p>
           </article>
         </div>
         <div class="item">
           <article class="VPFeature">
             <div class="icon">🔩</div>
-            <h2 class="title">交给我吧</h2>
-            <p class="details">基于 TypeScript，保证安全</p>
+            <h2 class="title">安全保证</h2>
+            <p class="details">TypeScript 诚不欺我</p>
           </article>
         </div>
         <div class="item">
           <article class="VPFeature">
             <div class="icon">🔑</div>
-            <h2 class="title">你渴望力量吗</h2>
-            <p class="details">项目藏有变强的密码</p>
+            <h2 class="title">使用便捷</h2>
+            <p class="details">极低门槛，快速上手</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">📦</div>
+            <h2 class="title">资源丰富</h2>
+            <p class="details">海量组件，持续更新</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">💡</div>
+            <h2 class="title">代码易读</h2>
+            <p class="details">追求极致，重构不止</p>
+          </article>
+        </div>
+        <div class="item">
+          <article class="VPFeature">
+            <div class="icon">🛠️</div>
+            <h2 class="title">文档贴心</h2>
+            <p class="details">反复斟酌，学习无忧</p>
           </article>
         </div>
       </div>
     </div>
+    <br />
   </div>
 </template>
 
@@ -84,12 +85,13 @@ export default {
 
 <style lang="scss" scoped>
 $nav-height: 60px;
-$text: rgba(56 56 56 / 70%);
-$--vp-button-brand-border: #42b883;
-$--vp-button-brand-bg: #42b883;
+$text-1: rgba(56 56 56 / 70%);
+$text-2: rgba(60, 60, 60, 0.7);
+$--vp-button-brand: #00ab95;
+$--vp-button-brand-hover: #94cfc1;
 $--vp-button-brand-text: rgba(255, 255, 255, 0.87);
-$--vp-button-alt-border: #d1d1d1;
-$--vp-button-alt-bg: #f2f2f2;
+$--vp-button-alt: #f2f2f2;
+$--vp-button-alt-hover: #d1d1d1;
 $--vp-button-alt-text: #213547;
 
 .home {
@@ -100,10 +102,10 @@ $--vp-button-alt-text: #213547;
   flex-shrink: 0;
 
   > .content {
-    margin-top: calc($nav-height * -1);
+    display: flex;
+    flex-direction: column;
     padding: calc($nav-height + 48px) 24px 48px;
     text-align: center;
-    flex-direction: column;
     margin: 0 auto;
     max-width: 1152px;
 
@@ -118,7 +120,11 @@ $--vp-button-alt-text: #213547;
         color: transparent;
 
         > .clip {
-          background: -webkit-linear-gradient(120deg, #42b883 30%, #86b91a);
+          background: -webkit-linear-gradient(
+            120deg,
+            $--vp-button-brand 30%,
+            $--vp-button-brand-hover
+          );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -143,7 +149,7 @@ $--vp-button-alt-text: #213547;
         font-size: 18px;
         font-weight: 500;
         white-space: pre-wrap;
-        color: $text;
+        color: $text-1;
       }
 
       > .actions {
@@ -166,20 +172,35 @@ $--vp-button-alt-text: #213547;
             font-size: 14px;
             font-weight: 500;
             text-align: center;
+            text-decoration: inherit;
             white-space: nowrap;
-            transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+            touch-action: manipulation;
+            transition-property: color, background-color, border-color;
+            transition-duration: 0.25s, 0.25s, 0.25s;
+            transition-timing-function: ease, ease, ease;
+            transition-delay: 0s, 0s, 0s;
           }
 
           > .brand {
-            border-color: $--vp-button-brand-border;
-            background-color: $--vp-button-brand-bg;
             color: $--vp-button-brand-text;
+            background-color: $--vp-button-brand;
+            border-color: $--vp-button-brand;
+          }
+
+          > .brand:hover {
+            background-color: $--vp-button-brand-hover;
+            border-color: $--vp-button-brand-hover;
           }
 
           > .alt {
-            border-color: $--vp-button-alt-border;
-            background-color: $--vp-button-alt-bg;
+            border-color: $--vp-button-alt;
+            background-color: $--vp-button-alt;
             color: $--vp-button-alt-text;
+          }
+
+          > .alt:hover {
+            background-color: $--vp-button-alt-hover;
+            border-color: $--vp-button-alt-hover;
           }
         }
       }
@@ -194,6 +215,22 @@ $--vp-button-alt-text: #213547;
         margin: 0 auto;
         width: 320px;
         height: 320px;
+
+        > .image-bg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          border-radius: 50%;
+          width: 192px;
+          height: 192px;
+          background-image: linear-gradient(
+            -45deg,
+            $--vp-button-brand 20%,
+            $--vp-button-brand-hover
+          );
+          filter: blur(72px);
+          transform: translate(-50%, -50%);
+        }
 
         > .image-src {
           position: absolute;
@@ -299,6 +336,11 @@ $--vp-button-alt-text: #213547;
           width: 392px;
           height: 392px;
 
+          > .image-bg {
+            width: 256px;
+            height: 256px;
+          }
+
           > .image-src {
             max-width: 256px;
           }
@@ -319,8 +361,6 @@ $--vp-button-alt-text: #213547;
 
 @media (min-width: 768px) {
   .home {
-    padding-bottom: 128px;
-
     > .content {
       max-width: 768px;
     }
@@ -338,10 +378,9 @@ $--vp-button-alt-text: #213547;
 @media (min-width: 960px) {
   .home {
     padding-top: $nav-height;
-    padding-bottom: 96px;
 
     > .content {
-      padding: calc($nav-height + 80px) 64px 64px;
+      padding: calc($nav-height + 40px) 32px 64px;
       text-align: left;
       display: flex;
       flex-direction: row;
@@ -384,19 +423,12 @@ $--vp-button-alt-text: #213547;
           transform: translate(-32px, -32px);
 
           > .image-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 50%;
-            width: 192px;
-            height: 192px;
-            background-image: linear-gradient(-45deg, #86b91a60 30%, #edd53260);
-            filter: blur(72px);
-            transform: translate(-50%, -50%);
+            width: 320px;
+            height: 320px;
+          }
 
-            > .image-src {
-              max-width: 320px;
-            }
+          > .image-src {
+            max-width: 320px;
           }
         }
       }
