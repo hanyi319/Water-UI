@@ -73,8 +73,13 @@ aside {
         text-decoration: none;
       }
 
+      > a:hover {
+        background: #94cfc1;
+        color: #fff;
+      }
+
       .router-link-active {
-        background: #42b883;
+        background: #00ab95;
         color: #fff;
       }
     }

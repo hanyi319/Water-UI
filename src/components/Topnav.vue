@@ -19,16 +19,20 @@
         </div>
         <div class="nav-item">
           |&nbsp;&nbsp;&nbsp;
-          <svg class="icon">
-            <use xlink:href="#icon-yuque"></use>
-          </svg>
-          <a href="https://www.yuque.com/docs/share/784f9146-e690-4abc-bb08-22e570b23047?#">语雀</a>
+          <a href="https://www.yuque.com/docs/share/784f9146-e690-4abc-bb08-22e570b23047?#">
+            <svg class="icon">
+              <use xlink:href="#icon-yuque"></use>
+            </svg>
+            语雀
+          </a>
         </div>
         <div class="nav-item">
-          <svg class="icon">
-            <use xlink:href="#icon-github"></use>
-          </svg>
-          <a href="https://github.com/hanyi319/Toy-UI">GitHub</a>
+          <a href="https://github.com/hanyi319/Toy-UI">
+            <svg class="icon">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+            GitHub
+          </a>
         </div>
       </nav>
     </div>
@@ -115,11 +119,15 @@ $border-primary: #e7e9e8;
           text-decoration: none;
         }
 
+        > a:hover {
+          color: #00ab95;
+        }
+
         > .router-link-active {
-          color: #42b883;
+          color: #00ab95;
           font-weight: bolder;
           margin-bottom: -2px;
-          border-bottom: 2px solid #42b883;
+          border-bottom: 2px solid #00ab95;
         }
       }
     }

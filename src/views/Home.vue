@@ -32,14 +32,14 @@
           <article class="VPFeature">
             <div class="icon">⚡️</div>
             <h2 class="title">技术新颖</h2>
-            <p class="details">Vue 3 带我走向时代之巅</p>
+            <p class="details">Vue 3，时代之选</p>
           </article>
         </div>
         <div class="item">
           <article class="VPFeature">
             <div class="icon">🔩</div>
             <h2 class="title">安全保证</h2>
-            <p class="details">TypeScript 诚不欺我</p>
+            <p class="details">TypeScript，诚不欺我</p>
           </article>
         </div>
         <div class="item">
