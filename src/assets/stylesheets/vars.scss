@@ -1,0 +1,18 @@
+:root {
+  --theme-color-blue-1: #0081f9;
+  --theme-color-blue-2: #0064e0;
+  --title-color-black: #1c2a33;
+  --text-color-black: #44475b;
+  --text-color-white: #ffffff;
+  --subText-color-black: rgba(60 60 60 / 70%);
+  --bg-color-white: #ffffff;
+  --vp-button-brand: var(--theme-color-blue-1);
+  --vp-button-brand-hover: var(--theme-color-blue-2);
+  --vp-button-brand-text: var(--text-color-white);
+  --vp-button-alt: #f2f2f2;
+  --vp-button-alt-hover: #d1d1d1;
+  --vp-button-alt-text: var(--text-color-black);
+  --nav-height: 60px;
+  --bg-primary: rgba(255, 255, 255, 0.7);
+  --border-primary: #e7e9e8;
+}

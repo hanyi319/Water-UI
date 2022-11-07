@@ -4,7 +4,7 @@
     <div class="content">
       <div class="main">
         <h1 class="name">
-          <span class="clip">Toy UI</span>
+          <span class="clip">Water UI</span>
         </h1>
         <p class="text">简洁有效的组件库</p>
         <p class="tagline">如无必要，勿增实体</p>
@@ -13,16 +13,13 @@
             <router-link class="VPButton brand" to="/doc">快速开始</router-link>
           </div>
           <div class="action">
-            <a class="VPButton alt" href="https://github.com/hanyi319/Toy-UI">查看源码</a>
+            <a class="VPButton alt" href="https://github.com/hanyi319/Water-UI">查看源码</a>
           </div>
         </div>
       </div>
       <div class="image">
         <div class="image-container">
-          <div class="image-bg"></div>
-          <svg class="image-src">
-            <use xlink:href="#icon-toy"></use>
-          </svg>
+          <img src="../assets/icons/logo.svg" alt="logo" class="logo" />
         </div>
       </div>
     </div>
@@ -84,16 +81,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$nav-height: 60px;
-$text-1: rgba(56 56 56 / 70%);
-$text-2: rgba(60, 60, 60, 0.7);
-$--vp-button-brand: #00ab95;
-$--vp-button-brand-hover: #94cfc1;
-$--vp-button-brand-text: rgba(255, 255, 255, 0.87);
-$--vp-button-alt: #f2f2f2;
-$--vp-button-alt-hover: #d1d1d1;
-$--vp-button-alt-text: #213547;
-
 .home {
   width: 100%;
   max-width: 100%;
@@ -104,10 +91,10 @@ $--vp-button-alt-text: #213547;
   > .content {
     display: flex;
     flex-direction: column;
-    padding: calc($nav-height + 48px) 24px 48px;
-    text-align: center;
-    margin: 0 auto;
     max-width: 1152px;
+    text-align: center;
+    padding: var(--nav-height) 24px 48px;
+    margin: 0 auto;
 
     > .main {
       position: relative;
@@ -122,8 +109,8 @@ $--vp-button-alt-text: #213547;
         > .clip {
           background: -webkit-linear-gradient(
             120deg,
-            $--vp-button-brand 30%,
-            $--vp-button-brand-hover
+            var(--theme-color-blue-2) 30%,
+            var(--theme-color-blue-1)
           );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -133,23 +120,23 @@ $--vp-button-alt-text: #213547;
       > .name,
       .text {
         margin: 0 auto;
-        // max-width: 392px;
+        padding-bottom: 8px;
         letter-spacing: -0.4px;
         line-height: 40px;
         font-size: 32px;
-        font-weight: 700;
+        font-weight: bold;
         white-space: pre-wrap;
+        color: var(--title-color-black);
       }
 
       > .tagline {
         margin: 0 auto;
-        padding-top: 8px;
         max-width: 329px;
         line-height: 28px;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: medium;
         white-space: pre-wrap;
-        color: $text-1;
+        color: var(--subText-color-black);
       }
 
       > .actions {
@@ -182,25 +169,25 @@ $--vp-button-alt-text: #213547;
           }
 
           > .brand {
-            color: $--vp-button-brand-text;
-            background-color: $--vp-button-brand;
-            border-color: $--vp-button-brand;
+            color: var(--vp-button-brand-text);
+            background-color: var(--vp-button-brand);
+            border-color: var(--vp-button-brand);
           }
 
           > .brand:hover {
-            background-color: $--vp-button-brand-hover;
-            border-color: $--vp-button-brand-hover;
+            background-color: var(--vp-button-brand-hover);
+            border-color: var(--vp-button-brand-hover);
           }
 
           > .alt {
-            border-color: $--vp-button-alt;
-            background-color: $--vp-button-alt;
-            color: $--vp-button-alt-text;
+            border-color: var(--vp-button-alt);
+            background-color: var(--vp-button-alt);
+            color: var(--vp-button-alt-text);
           }
 
           > .alt:hover {
-            background-color: $--vp-button-alt-hover;
-            border-color: $--vp-button-alt-hover;
+            background-color: var(--vp-button-alt-hover);
+            border-color: var(--vp-button-alt-hover);
           }
         }
       }
@@ -208,43 +195,19 @@ $--vp-button-alt-text: #213547;
 
     > .image {
       order: 1;
-      margin: -76px -24px -48px;
 
       > .image-container {
         position: relative;
         margin: 0 auto;
-        width: 320px;
-        height: 320px;
+        width: 200px;
+        height: 200px;
 
-        > .image-bg {
+        > .logo {
           position: absolute;
           top: 50%;
           left: 50%;
-          border-radius: 50%;
-          width: 192px;
-          height: 192px;
-          background-image: linear-gradient(
-            -45deg,
-            $--vp-button-brand 20%,
-            $--vp-button-brand-hover
-          );
-          filter: blur(72px);
           transform: translate(-50%, -50%);
-        }
-
-        > .image-src {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          max-width: 192px;
-          transform: translate(-50%, -50%);
-        }
-
-        > img {
-          display: block;
-          vertical-align: middle;
-          max-width: 100%;
-          height: auto;
+          width: 50%;
         }
       }
     }
@@ -306,8 +269,7 @@ $--vp-button-alt-text: #213547;
 @media (min-width: 640px) {
   .home {
     .content {
-      padding: calc($nav-height + 80px) 48px 64px;
-      max-width: 640px;
+      padding: calc(var(nav-height) + 48px) 48px 64px;
 
       > .main {
         > .name,
@@ -330,26 +292,16 @@ $--vp-button-alt-text: #213547;
       }
 
       > .image {
-        margin: -108px -24px -48px;
-
         > .image-container {
-          width: 392px;
-          height: 392px;
-
-          > .image-bg {
-            width: 256px;
-            height: 256px;
-          }
-
-          > .image-src {
-            max-width: 256px;
-          }
+          width: 400px;
+          height: 400px;
         }
       }
     }
 
     .features {
       padding: 0 48px;
+
       > .items {
         > .item {
           width: 50%;
@@ -361,10 +313,6 @@ $--vp-button-alt-text: #213547;
 
 @media (min-width: 768px) {
   .home {
-    > .content {
-      max-width: 768px;
-    }
-
     > .features {
       .items {
         > .item {
@@ -377,18 +325,19 @@ $--vp-button-alt-text: #213547;
 
 @media (min-width: 960px) {
   .home {
-    padding-top: $nav-height;
+    padding-top: var(--nav-height);
 
     > .content {
-      padding: calc($nav-height + 40px) 32px 64px;
+      padding: var(--nav-height) 64px 64px;
       text-align: left;
       display: flex;
       flex-direction: row;
 
       > .main {
-        max-width: 592px;
         order: 1;
         width: calc((100% / 3) * 2);
+        max-width: 592px;
+        margin-left: 8px;
 
         > .name,
         .text {
@@ -420,16 +369,6 @@ $--vp-button-alt-text: #213547;
           align-items: center;
           width: 100%;
           height: 100%;
-          transform: translate(-32px, -32px);
-
-          > .image-bg {
-            width: 320px;
-            height: 320px;
-          }
-
-          > .image-src {
-            max-width: 320px;
-          }
         }
       }
     }
@@ -443,12 +382,6 @@ $--vp-button-alt-text: #213547;
 @media (min-width: 1024px) {
   .content {
     max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .content {
-    max-width: 1280px;
   }
 }
 </style>

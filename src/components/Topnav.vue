@@ -5,10 +5,8 @@
         <use xlink:href="#icon-menu"></use>
       </svg>
       <router-link to="/" class="logo">
-        <svg class="icon">
-          <use xlink:href="#icon-toy"></use>
-        </svg>
-        <span class="can-hide">Toy UI</span>
+        <img src="../assets/icons/logo.svg" alt="logo" class="icon" />
+        <span class="can-hide">Water UI</span>
       </router-link>
       <nav class="nav-links can-hide">
         <div class="nav-item">
@@ -18,15 +16,7 @@
           <router-link to="/doc/switch">组件</router-link>
         </div>
         <div class="nav-item">
-          |&nbsp;&nbsp;&nbsp;
-          <a href="https://www.yuque.com/docs/share/784f9146-e690-4abc-bb08-22e570b23047?#">
-            <svg class="icon">
-              <use xlink:href="#icon-yuque"></use>
-            </svg>
-            语雀
-          </a>
-        </div>
-        <div class="nav-item">
+          |&nbsp;&nbsp;&nbsp;&nbsp;
           <a href="https://github.com/hanyi319/Toy-UI">
             <svg class="icon">
               <use xlink:href="#icon-github"></use>
@@ -60,9 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bg-primary: rgba(255, 255, 255, 0.7);
-$border-primary: #e7e9e8;
-
 .header {
   position: fixed;
   top: 0;
@@ -70,16 +57,16 @@ $border-primary: #e7e9e8;
   width: 100%;
   height: 60px;
   z-index: 20;
-  background: $bg-primary;
+  background: var(--bg-primary);
   backdrop-filter: saturate(50%) blur(8px);
-  border-bottom: 1px solid $border-primary;
+  border-bottom: 1px solid var(--border-primary);
 
   > .header-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding: 0 24px;
+    height: 100%;
 
     > .logo {
       display: inline-block;
@@ -91,13 +78,14 @@ $border-primary: #e7e9e8;
         height: 2.2rem;
         min-width: 2.2rem;
         margin-right: 0.8rem;
-        vertical-align: top;
+        vertical-align: middle;
       }
 
       > span {
         font-size: 1.3rem;
-        font-weight: 600;
-        color: #2c3e50;
+        font-weight: bold;
+        padding: 0 4px;
+        color: var(--title-color-black);
         position: relative;
       }
     }
@@ -115,19 +103,19 @@ $border-primary: #e7e9e8;
         > a {
           line-height: 1.4rem;
           color: inherit;
-          font-weight: 500;
+          font-weight: bold;
           text-decoration: none;
         }
 
         > a:hover {
-          color: #00ab95;
+          color: var(--theme-color-blue-1);
         }
 
         > .router-link-active {
-          color: #00ab95;
+          color: var(--theme-color-blue-1);
           font-weight: bolder;
           margin-bottom: -2px;
-          border-bottom: 2px solid #00ab95;
+          border-bottom: 2px solid var(--theme-color-blue-1);
         }
       }
     }

@@ -1,5 +1,5 @@
 import "./lib/toy.scss";
-import "./index.scss";
+import "./App.scss";
 import { createApp } from "vue";
 import App from "./App.vue";
 import { router } from "./router";

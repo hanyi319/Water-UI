@@ -20,15 +20,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$aside-index: 1;
-
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   > .nav {
     flex-shrink: 0;
   }
+
   > .content {
     flex-grow: 1;
     padding-top: 60px;
@@ -42,13 +42,15 @@ $aside-index: 1;
 
 .content {
   display: flex;
+
   > aside {
     flex-shrink: 0;
   }
+
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: #fff;
+    background: var(--bg-color-white);
   }
 }
 
