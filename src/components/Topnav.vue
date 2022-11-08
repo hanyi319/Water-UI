@@ -57,9 +57,9 @@ export default {
   width: 100%;
   height: 60px;
   z-index: 20;
-  background: var(--bg-primary);
+  background: var(--bg-color-grey);
   backdrop-filter: saturate(50%) blur(8px);
-  border-bottom: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-color);
 
   > .header-container {
     display: flex;

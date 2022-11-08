@@ -6,6 +6,8 @@
   --text-color-white: #ffffff;
   --subText-color-black: rgba(60 60 60 / 70%);
   --bg-color-white: #ffffff;
+  --bg-color-grey: rgba(255, 255, 255, 0.7);
+  --border-color: #e7e9e8;
   --vp-button-brand: var(--theme-color-blue-1);
   --vp-button-brand-hover: var(--theme-color-blue-2);
   --vp-button-brand-text: var(--text-color-white);
@@ -13,6 +15,10 @@
   --vp-button-alt-hover: #d1d1d1;
   --vp-button-alt-text: var(--text-color-black);
   --nav-height: 60px;
-  --bg-primary: rgba(255, 255, 255, 0.7);
-  --border-primary: #e7e9e8;
+  --z-index-sideMenu-mask: 1;
+  --z-index-sideMenu-menu: 2;
+  --sideMenu-mask-bg: rgba(0, 0, 0, 0.7);
+  --sideMenu-menu-bg: #fafafa;
+  --sideMenu-button-hover: #d8d8d8;
+  --sideMenu-button-active: var(--theme-color-blue-1);
 }
